@@ -101,5 +101,3 @@ Choose a license (MIT recommended). If you prefer, add this file as `LICENSE`:
 - MIT: <https://choosealicense.com/licenses/mit/>
 - Apache‑2.0: <https://choosealicense.com/licenses/apache-2.0/>
 
-## Citation (optional)
-If you use this repo in your work, please cite or link back to the project page.
