@@ -1,0 +1,47 @@
+# Default config for Mistral fine-tuning on SVG
+model:
+  base_model: mistralai/Mistral-7B-v0.1
+  load_4bit: true
+
+data:
+  path: data/svg_train.jsonl
+  text_field: text
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  # target_modules: ['q_proj','k_proj','v_proj','o_proj','gate_proj','up_proj','down_proj']  # optional override
+
+training:
+  output_dir: mistral-svg-lora
+  epochs: 3
+  batch_size: 1
+  grad_accum: 16
+  lr: 0.0002
+  warmup_ratio: 0.03
+  logging_steps: 10
+  save_steps: 200
+  save_total_limit: 3
+  gradient_checkpointing: true
+  max_seq_length: 1024
+  report_to: ['none']
+
+
+tokenizer:
+  # Optional: semantic/special tokens for SVG. Edit as needed.
+  special_tokens:
+    - "<svg>"
+    - "</svg>"
+    - "<path>"
+    - "<rect>"
+    - "<circle>"
+    - "<g>"
+    - "<line>"
+    - "<polyline>"
+    - "<polygon>"
+    - "<ellipse>"
+    - "<defs>"
+    - "<style>"
+    - "<linearGradient>"
+    - "<radialGradient>"

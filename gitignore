@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.Python
+.venv/
+venv/
+env/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Datasets / artifacts
+data/
+*.jsonl
+*.csv
+
+# Model weights / outputs
+mistral-scg-lora/
+checkpoints/
+runs/
+*.pt
+*.bin
+*.safetensors
+
+# OS
+.DS_Store
